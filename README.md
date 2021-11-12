@@ -18,6 +18,10 @@ The solution consists of the following components created via CloudFormation:
 - AWS Batch resources – compute environment, job queue, and job definition
 - AWS Batch jobs that would be monitored using this solution.
 
+## How to use
+
+Use the CloudFormation template 'MonitorBatchJobs.yaml' and create a CloudFormation stack on the AWS console. 
+
 ## Considerations
 
 The Lambda function uses the ListJobs API call. The maximum number of results is returned by ListJobs in paginated output. Therefore, if you are submitting many jobs, then you must modify the Lambda function to fetch more results from the initial response of the call by using the nextToken response element. Use this nextToken element and iterate through in a loop to keep fetching the paginated results until there are no further nextToken elements present.
